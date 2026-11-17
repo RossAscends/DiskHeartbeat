@@ -13,6 +13,11 @@ Disk Heartbeat - Windows x64
 
 Extract this ZIP into a writable folder and run DiskHeartbeat.exe.
 The EXE includes .NET and its libraries: no runtime install or smartctl is needed.
+
+Windows SmartScreen: this release is unsigned. A blue "Windows protected your PC"
+popup on first launch is expected. If you downloaded this ZIP from the official
+GitHub Releases page, choose "More info", then "Run anyway" to launch the app.
+
 Run as administrator for native SATA telemetry and per-process write attribution.
 
 Metrics and ratings are saved in Data\history.json beside the EXE.

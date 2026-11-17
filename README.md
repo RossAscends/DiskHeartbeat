@@ -1,5 +1,7 @@
 ﻿# Disk Heartbeat
 
+> **Windows SmartScreen:** Disk Heartbeat is currently **unsigned**, so Windows may show a blue **Windows protected your PC** SmartScreen popup on first launch. This is expected for this unsigned release. If you downloaded the app from this repository's [GitHub Releases](https://github.com/RossAscends/DiskHeartbeat/releases), click **More info**, then **Run anyway** in that blue popup to launch it.
+
 Windows 11, C# / WPF. Tracks native NVMe and SATA SSD host writes, maps manufacturer-rated TBW to an 80-year clock, and keeps the actual counters visible. No drive utilities, helper processes, vendor SDKs, or third-party drivers are used by the app. The existing Microsoft TraceEvent managed package is used only for ETW process attribution; SATA telemetry adds no package dependency.
 
 ## Run the compiled app

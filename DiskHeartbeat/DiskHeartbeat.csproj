@@ -1,5 +1,5 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup><OutputType>WinExe</OutputType><Version>0.1.0</Version><RepositoryUrl>https://github.com/RossAscends/DiskHeartbeat</RepositoryUrl><TargetFramework>net8.0-windows</TargetFramework><UseWPF>true</UseWPF><UseWindowsForms>true</UseWindowsForms><Nullable>enable</Nullable><ImplicitUsings>enable</ImplicitUsings></PropertyGroup>
+  <PropertyGroup><OutputType>WinExe</OutputType><Version>0.1.1</Version><RepositoryUrl>https://github.com/RossAscends/DiskHeartbeat</RepositoryUrl><TargetFramework>net8.0-windows</TargetFramework><UseWPF>true</UseWPF><UseWindowsForms>true</UseWindowsForms><Nullable>enable</Nullable><ImplicitUsings>enable</ImplicitUsings></PropertyGroup>
 <PropertyGroup Condition="'$(Configuration)' == 'Release'">
   <DebugType>none</DebugType><DebugSymbols>false</DebugSymbols>
   <Deterministic>true</Deterministic><ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
