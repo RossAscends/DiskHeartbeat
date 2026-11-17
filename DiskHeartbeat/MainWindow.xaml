@@ -1,0 +1,25 @@
+﻿<Window x:Class="DiskHeartbeat.MainWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Title="Disk Heartbeat" Width="960" Height="660" MinWidth="500" MinHeight="460" Background="#101820" Foreground="#E8EFF2" FontFamily="Segoe UI" FontSize="12">
+ <Window.Resources>
+  <Style TargetType="TextBlock"><Style.Triggers><Trigger Property="Text" Value=""><Setter Property="Visibility" Value="Collapsed"/></Trigger></Style.Triggers></Style>
+  <Style TargetType="ToolTip"><Setter Property="MaxWidth" Value="360"/></Style>
+  <Style TargetType="Button"><Setter Property="Padding" Value="11,5"/><Setter Property="Background" Value="#B6F2D6"/><Setter Property="Foreground" Value="#10251F"/><Setter Property="BorderThickness" Value="0"/><Setter Property="Cursor" Value="Hand"/></Style>
+ </Window.Resources>
+ <DockPanel Margin="20,16,8,12" Background="#101820">
+  <StackPanel DockPanel.Dock="Top" Margin="0,0,12,16">
+   <DockPanel LastChildFill="True">
+    <Button x:Name="Refresh" Content="Refresh drives" DockPanel.Dock="Right" Click="RefreshDrives" ToolTip="Discover native NVMe and SATA SSDs. Every displayed drive is recorded independently of any interaction."/>
+    <WrapPanel VerticalAlignment="Center"><TextBlock Text="DISK HEARTBEAT" FontSize="14" FontWeight="SemiBold" Foreground="#9DDDBF" VerticalAlignment="Center"/><TextBlock x:Name="Pulse" Text="●" Foreground="#87E1B4" Margin="18,0,7,0" VerticalAlignment="Center"/><TextBlock x:Name="Delta" Text="Listening for writes…" Foreground="#9CAFB9" VerticalAlignment="Center" ToolTip="Watching all drives. Pulses for additional whole GB while the app is open; large jumps produce one pulse and a delta. Not a per-process or lifetime-health signal."/></WrapPanel>
+   </DockPanel>
+   <StackPanel Orientation="Horizontal" Margin="0,10,0,0"><CheckBox x:Name="Attribution" Content="Track apps" Foreground="#E8EFF2" Click="AttributionChanged" ToolTip="Record observed per-process disk-write events for all drives. Requires administrator rights. Continues in the tray; turning this off leaves lifetime counters recording."/><TextBlock x:Name="AttributionStatus" Foreground="#9CAFB9" Margin="12,0,0,0" TextWrapping="Wrap"/></StackPanel>
+   <TextBlock x:Name="StorageStatus" Foreground="#F5D69A" TextWrapping="Wrap"/>
+   <TextBlock x:Name="Status" Foreground="#F5D69A" TextWrapping="Wrap"/>
+  </StackPanel>
+  <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+   <StackPanel>
+    <TextBlock x:Name="EmptyState" Text="Finding your drives…" Foreground="#9CAFB9" Margin="0,10,0,14"/>
+    <ItemsControl x:Name="Cards"><ItemsControl.ItemsPanel><ItemsPanelTemplate><WrapPanel Orientation="Horizontal"/></ItemsPanelTemplate></ItemsControl.ItemsPanel></ItemsControl>
+    <Expander Header="Discovery details" Foreground="#9CAFB9" Margin="0,3,12,0"><TextBlock x:Name="DiscoverySummary" TextWrapping="Wrap" Margin="0,7,0,0"/></Expander>
+   </StackPanel>
+  </ScrollViewer>
+ </DockPanel>
+</Window>
